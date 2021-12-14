@@ -16,6 +16,7 @@ public class SpringbootAppApplication {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		System.out.println("SpringbootAppApplication Server is running ...");
 		SpringApplication.run(SpringbootAppApplication.class, args);
 	}
 
