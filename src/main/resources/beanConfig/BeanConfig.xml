@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="helloWorld" class="com.lbs0912.springboot.app.service.HelloWorld">
+    <bean id="helloWorld" class="com.lbs0912.springboot.app.service.HelloWorld" init-method="initMethod" destroy-method="destroyMethod">
         <property name="message" value="Hello World!"/>
     </bean>
 
