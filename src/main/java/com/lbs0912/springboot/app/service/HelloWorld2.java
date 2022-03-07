@@ -17,11 +17,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 @Lazy(value = false)
-public class HelloWorld implements InitializingBean, DisposableBean {
+public class HelloWorld2 implements InitializingBean, DisposableBean {
     private String message;
 
 
-    public HelloWorld() {
+    public HelloWorld2() {
         log.info("【构造方法】HelloWorld");
     }
 

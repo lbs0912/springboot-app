@@ -41,7 +41,10 @@ public class SpringbootAppApplication {
 	public static void contextTest2(){
 		//使用框架 API ClassPathXmlApplicationContext() 来创建应用程序的上下文。这个 API 加载 beans 的配置文件并最终基于所提供的 API，它处理创建并初始化所有的对象，即在配置文件中提到的 beans
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("beanConfig/BeanConfig.xml");
+		HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+		System.out.println(obj.getMessage());
 		context.registerShutdownHook();
+
 
 	}
 

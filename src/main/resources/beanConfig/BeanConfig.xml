@@ -9,4 +9,11 @@
         <property name="message" value="Hello World!"/>
     </bean>
 
+    <bean id="helloWorld2" class="com.lbs0912.springboot.app.service.HelloWorld2" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="message" value="Hello World!"/>
+    </bean>
+
+
+    <bean class="com.lbs0912.springboot.app.service.InitHelloWorld"/>
+
 </beans>
