@@ -33,7 +33,7 @@ public class HelloWorld2 implements InitializingBean, DisposableBean {
     }
 
 
-    @Override
+
     public void afterPropertiesSet() throws Exception {
         log.info("【初始化】InitializingBean afterPropertiesSet");
     }
@@ -53,7 +53,6 @@ public class HelloWorld2 implements InitializingBean, DisposableBean {
     }
 
 
-    @Override
     public void destroy() throws Exception {
         log.info("【销毁】@DisposableBean destroy");
     }

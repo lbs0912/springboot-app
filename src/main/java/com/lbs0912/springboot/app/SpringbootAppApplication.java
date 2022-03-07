@@ -1,6 +1,7 @@
 package com.lbs0912.springboot.app;
 
 import com.lbs0912.springboot.app.service.HelloWorld;
+import com.lbs0912.springboot.app.service.JavaCollection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -27,9 +28,8 @@ public class SpringbootAppApplication {
 		SpringApplication.run(SpringbootAppApplication.class, args);
 
 //		contextTest1();
-
 		contextTest2();
-
+//		contextTest3();
 	}
 
 	public static void contextTest1(){
@@ -51,6 +51,15 @@ public class SpringbootAppApplication {
 	private static void getMsgFromBean(ApplicationContext context){
 		HelloWorld helloWorldObj = (HelloWorld) context.getBean("helloWorld");
 		System.out.println(helloWorldObj.getMessage());
+	}
+
+	private static void contextTest3(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("beanConfig/BeanConfig.xml");
+		JavaCollection jc=(JavaCollection)context.getBean("javaCollection");
+		jc.getAddressList();
+		jc.getAddressSet();
+		jc.getAddressMap();
+		jc.getAddressProp();
 	}
 
 }

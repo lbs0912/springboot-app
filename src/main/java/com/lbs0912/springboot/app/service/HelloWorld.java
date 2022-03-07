@@ -4,6 +4,7 @@ import com.lbs0912.springboot.app.entity.UserInfo;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -23,9 +24,9 @@ public class HelloWorld implements InitializingBean, DisposableBean {
     private String message;
     private UserInfo userInfo;
 
-    public HelloWorld(UserInfo userInfo) {
-        this.userInfo = userInfo;
-        log.info("【构造方法】HelloWorld");
+    @Required
+    public void setUserInfo(UserInfo userInfo){
+        this.userInfo  = userInfo;
     }
 
     public void setMessage(String message){
@@ -37,7 +38,7 @@ public class HelloWorld implements InitializingBean, DisposableBean {
     }
 
 
-    @Override
+
     public void afterPropertiesSet() throws Exception {
         log.info("【初始化】InitializingBean afterPropertiesSet");
     }
@@ -57,7 +58,7 @@ public class HelloWorld implements InitializingBean, DisposableBean {
     }
 
 
-    @Override
+
     public void destroy() throws Exception {
         log.info("【销毁】@DisposableBean destroy");
     }
