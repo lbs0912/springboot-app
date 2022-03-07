@@ -1,5 +1,7 @@
 package com.lbs0912.springboot.app.service;
 
+import com.lbs0912.springboot.app.entity.UserInfo;
+
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Lazy;
@@ -19,9 +21,10 @@ import lombok.extern.slf4j.Slf4j;
 @Lazy(value = false)
 public class HelloWorld implements InitializingBean, DisposableBean {
     private String message;
+    private UserInfo userInfo;
 
-
-    public HelloWorld() {
+    public HelloWorld(UserInfo userInfo) {
+        this.userInfo = userInfo;
         log.info("【构造方法】HelloWorld");
     }
 
@@ -29,7 +32,8 @@ public class HelloWorld implements InitializingBean, DisposableBean {
         this.message  = message;
     }
     public String getMessage(){
-        return "Your Message : " + message;
+//        return "Your Message : " + message;
+        return "userInfo age:" + this.userInfo.getAge() + ",name:" + this.userInfo.getName();
     }
 
 
